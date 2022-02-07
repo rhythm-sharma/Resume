@@ -23,26 +23,28 @@
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{lightgray}{HTML}{999999}
 
-\definecolor{blue}{HTML}{66D9EE}
-\definecolor{red}{HTML}{FA2772}
-\definecolor{orange}{HTML}{FE9720}
-\definecolor{green}{HTML}{A7E22E}
-\definecolor{purple}{HTML}{9358FE}
-\definecolor{aquamarine}{HTML}{36AF90}
+\definecolor{blue}{HTML}{477EAE}
+\definecolor{red}{HTML}{D00000}
+\definecolor{green}{HTML}{007A3D}
+\definecolor{purple}{HTML}{C36FA7}
+\definecolor{aquamarine}{HTML}{00F5DC}
+\definecolor{headered}{HTML}{292929}
+\definecolor{orange}{HTML}{F69628}
+\definecolor{myblue}{HTML}{3498DB}
 
 \definecolor{date}{HTML}{A4A4A4}
 
 \ifdefined\@cv@print
-  \colorlet{blue}{gray}
+  \colorlet{blue}{blue}
   \colorlet{red}{gray}
-  \colorlet{orange}{gray}
   \colorlet{green}{gray}
   \colorlet{purple}{gray}
   \colorlet{aquamarine}{gray}
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
+  \colorlet{orange}{gray}
 \else
-  \colorlet{fillheader}{gray}
+  \colorlet{fillheader}{headered}
   \colorlet{header}{white}
 \fi
 \colorlet{textcolor}{gray}
@@ -121,33 +123,31 @@
 \RequirePackage{parskip}
 
 \newcounter{colorCounter}
-\def\@sectioncolor#1#2#3{%
-  {%
-    \color{%
+\def\@sectioncolor{
+    \color{
       \ifcase\value{colorCounter}%
         blue\or%
         red\or%
-        orange\or%
         green\or%
+        orange\or%
         purple\or%
         aquamarine\else%
         headercolor\fi%
-    } #1#2#3%
-  }%
+    }
   \stepcounter{colorCounter}%
 }
 
 \renewcommand{\section}[1]{
   {\par\vspace{\parskip}
   {%
-    \LARGE\headingfont\color{headercolor}%
+    \LARGE\headingfont\color{sectioncolor}%
     \@sectioncolor #1%
   }
   \par\vspace{\parskip}}
 }
 
 \renewcommand{\subsection}[2]{
-  \par\vspace{.5\parskip}%
+  \par\vspace{1.5\parskip}%
   \Large\headingfont\color{headercolor} #2%
   \par\vspace{.25\parskip}%
 }
@@ -162,6 +162,7 @@
 % List environment %
 %----------------------------------------------------------------------------------------
 
+
 \setlength{\tabcolsep}{0pt}
 \newenvironment{entrylist}{%
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
@@ -169,51 +170,22 @@
   \end{tabular*}
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
-
 \newcommand{\entry}[4]{%
-  #1&\parbox[t]{11.8cm}{%
+  \parbox[t]{13.5cm}{%
     \textbf{#2}%
-    \hfill%
-    {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
+    % \hfill%
+    {\addfontfeature{Color=black} #3}\\%
     #4\vspace{\parsep}%
   }\\}
-
-\newcommand{\entrytwo}[4]{%
-  \parbox[t]{14.2cm}{%
-    \textbf{\large{#1}}%
-    \hfill%
-    {\small\addfontfeature{Color=gray} #2}\\%
-    \small\addfontfeature{Color=darkgray}#3\vspace{\parsep}%
-  }\\}
   
-\newcommand{\entrythree}[4]{%
-  \parbox[t]{14.2cm}{%
-    \textbf{\large{#1}}%
-    \hfill%
-    \vspace{0.1cm}
-    {\small\addfontfeature{Color=darkgray} #2}\\%
-    {\normalsize{#3}}%
-    \hfill%
-    {\small\addfontfeature{Color=gray} #4}\\%
+\newcommand{\entrytwo}[5]{%
+  \parbox[t]{13.5cm}{%
+    \textbf{#2}%
+    % \hfill%
+    {\addfontfeature{Color=black} #3}\\%
+    {#4\vspace{\parsep}}\\%
+    {\addfontfeature{Color=myblue}#5\vspace{\parsep}}%
   }\\}
-
-
-
-% Define an entry of cv information
-% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
-\newcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 1.5cm} R{1.5cm}}
-    \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
-  \end{tabular*}%
-}
-
 
 %----------------------------------------------------------------------------------------
 % Side block %
@@ -241,9 +213,15 @@
 %----------------------------------------------------------------------------------------
 
 \RequirePackage[left=6.4cm,top=1cm,right=1cm,bottom=1cm,nohead,nofoot]{geometry}
-\RequirePackage{hyperref}
+% \RequirePackage{hyperref}
+\usepackage[colorlinks = true,
+            linkcolor = myblue,
+            urlcolor  = myblue,
+            citecolor = myblue,
+            anchorcolor = myblue]{hyperref}
 \hypersetup{
-    pdftitle=CV/Resume \textbar{} Alejandro Pérez Londoño,
-    pdfauthor=Alejandro Pérez Londoño,
-    pdfsubject=CV/Resume%
-    }
+    pdftitle=Resume \textbar{} Nilay Sharma,
+    pdfauthor=Nilay Sharma,
+    pdfsubject=Resume%,
+    colorlinks = true
+}

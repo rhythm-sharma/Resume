@@ -1,12 +1,28 @@
 % -- Encoding UTF-8 without BOM
 % -- XeLaTeX => PDF (BIBER)
 
-\documentclass[espanol]{cv-style}     % Add 'print' as an option into the square bracket to remove colours from this template for printing. 
+\documentclass[english]{cv-style}     % Add 'print' as an option into the square bracket to remove colours from this template for printing. 
                                       % Add 'espanol' as an option into the square bracket to change the date format of the Last Updated Text
-%\setdefaultlanguage{spanish}
+%\setdefaultlanguage{english}
 %\sethyphenation[variant=spanish]{}{}  % Add words between the {} to avoid them to be cut 
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{blindtext}
 
+\pagestyle{fancy}
+\fancyhf{}
 
+\usepackage{hyperref}
+
+\rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
 \newcommand{\ExternalLink}{%
     \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
         \begin{scope}[x=1ex, y=1ex]
@@ -26,62 +42,45 @@
         \path[draw, line width = 0.5] (0.6, 1) 
             -- (1, 1) -- (1, 0.6);
         }
-}
-
-
-\usepackage{graphicx}
-
-\usepackage{afterpage}
-\usepackage{hyperref}
-\usepackage{color,soul}
-\usepackage{xcolor}
-\usepackage{xspace}
-\hypersetup{
-    pdftitle={},
-    pdfauthor={},
-    pdfsubject={},
-    pdfkeywords={},
-    colorlinks=true,
-    linkcolor=blue,
-    % allbordercolors=blue!50!red   % white border color for all
-}
+    }
+    
+\renewcommand{\headrulewidth}{0pt}
 
 \begin{document}
 
-\header{ }{Rhythm Sharma}
+\header{}{Rhythm Sharma}
 
 %----------------------------------------------------------------------------------------
 % SIDEBAR SECTION  -- In the aside, each new line forces a line break
 %----------------------------------------------------------------------------------------
 \begin{aside}
+%\
 \vspace{0.6cm}
 \includegraphics[width=4cm]{profile.jpg}
-%
+% \section{-}
+\vspace{0.3cm}
 \section{Designation}
 \vspace{0.3cm}
 Software Engineer
-\vspace{0.4cm}
 %
 \section{Contact}
 \vspace{0.3cm}
-(+91) 79 7689 6343
-rrhythmsharma@gmail.com
-\vspace{0.4cm}
++91-7976896343
+\href{mailto:rrhythmsharma@gmail.com}{rrhythmsharma@gmail.com}
 %
 \section{Profiles}
 \vspace{0.3cm}
-{\href{https://medium.com/@rhythmsharma}{\uline{ Medium \ExternalLink}}}
-{\href{https://github.com/rrhythmsharma}{\uline{ Github \ExternalLink}}}
-{\href{https://stackoverflow.com/users/9371371/rhythm-sharma}{ \uline{ Stackoverflow \ExternalLink}}}
-{\href{https://dribbble.com/rrhythm}{ \uline{ Dribbble \ExternalLink}}}
-{\href{https://rrhythmsharma.netlify.app/}{ \uline{ Portfolio \ExternalLink}}}
-\vspace{0.4cm}
+\href{https://medium.com/@rhythmsharma}{Medium \ExternalLink}
+\href{https://github.com/rrhythmsharma}{GitHub \ExternalLink}
+\href{https://stackoverflow.com/users/9371371/rhythm-sharma}{Stackoverflow \ExternalLink}
+\href{https://dribbble.com/rrhythm}{Dribbble \ExternalLink}
+\href{https://www.linkedin.com/in/rhythm-sharma-3901/}{LinkedIn \ExternalLink}
+\href{https://rrhythmsharma.netlify.app/}{Portfolio \ExternalLink}
 %
 \section{Version Control}
 \vspace{0.3cm}
 Git
-\vspace{0.4cm}
-%
+
 \section{Tools}
 \vspace{0.3cm}
 Homebrew
@@ -89,20 +88,17 @@ Node version manager(nvm)
 Jenkins
 Figma
 Framer
-\vspace{0.4cm}
-%
+
 \section{Hosting}
 \vspace{0.3cm}
 Netlify
 Heroku
 Github Pages
-\vspace{0.4cm}
-%
+
 \section{API development}
 \vspace{0.3cm}
 Postman
-\vspace{0.4cm}
-%
+
 \section{Editors/IDEs}
 \vspace{0.3cm}
 Vim
@@ -110,230 +106,233 @@ Atom
 Sublime Text
 VS Code
 Webstorm
-\vspace{0.4cm}
-%
+
+
+
 \end{aside}
 %----------------------------------------------------------------------------------------
-% RESUMEN SECTION
+% RESUME SECTION
 %----------------------------------------------------------------------------------------
-
 \vspace{0.2cm}
+%----------------------------------------------------------------------------------------
+% Skills SECTION
+%----------------------------------------------------------------------------------------
 \section{Skills}
-  \vspace{-0.2cm}
-\textbf{Proficiency :} JavaScript, React, Redux, Vue, Express, NodeJs, TypeScript
-  \vspace{0.2cm}
-\\
-\textbf{Also working with :} Kafka, MongoDB, StoryBook
-  \vspace{0.2cm}
-\\
-\textbf{Certifications :} Front-End Development(Free Code Camp)
-
-
+\vspace{-0.2cm}
+\begin{entrylist}
+\entry
+  {\scalebox{.8}[1.0]}
+  {Proficiency :}
+  {\hspace{0.1cm} \small{JavaScript, React, Redux, Vue, Express, NodeJs, TypeScript}}
+  {
+ 	\textbf{}
+ 	 \vspace{-0.4cm}
+  }
+ \entry
+  {\scalebox{.8}[1.0]}
+  {Also working with: }
+  {\hspace{0.1cm} \small{Kafka, MongoDB, StoryBook}}
+  {
+ 	\textbf{}
+ 	 \vspace{-0.4cm}
+  }
+ \entry
+  {\scalebox{.8}[1.0]}
+  {Certifications : }
+  {\hspace{0.1cm} \small{Front-End Development(Free Code Camp)}}
+  {
+ 	\textbf{}
+ 	 \vspace{-0.5cm}
+  }
+\end{entrylist}
+\vspace{-0.1cm}
 %----------------------------------------------------------------------------------------
 % WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 \section{Experience}
-  \vspace{-0.2cm}
+\vspace{-0.2cm}
 \begin{entrylist}
-%------------------------------------------------
 
-\entrytwo
-{Fleetx Pvt. Ltd.}
-{\scalebox{0.9}[1.0]{Oct’2020-Present}}
-{Software Engineer
-\begin{itemize}
-\item Working in both Front-End and Back-End domain. Responsibilities include creating new features as well as maintaining and enhancing existing features.
-\item Improved the website speed and performance by optimizing the web vitals score to \textbf{95\%} in desktop.
-\item \textbf{Setup Linting and formatting} in codebase to streamline development process and made all the products uniform in terms of design and code practices.
+%------------------------------------------------
+\textbf{Fleetx Pvt. Ltd.}{\hfill \footnotesize{Oct’2020-Present}}\\
+\footnotesize{Software Engineer}
+\vspace{0.1cm}\\
+ \hspace{-0.2cm}
+\entry
+  {\scalebox{.8}[1.0]{}}
+  {}
+  {\footnotesize{
+    \vspace{-0.5cm}
+    \begin{itemize}
+        \item Working in both Front-End and Back-End domain. Responsibilities include creating new features as well as maintaining and enhancing existing features. 
+        \item Improved the website speed and performance by optimizing the web vital score to \textbf{95\%} in desktop.
+        \item \textbf{Setup Linting and formatting} in codebase to streamline development process and made all the products \\ uniform in terms of design and code practices.
 \item Work on a diverse tech stack consisting of ReactJs, NextJs, Redux, SCSS, NodeJs,\\Firebase.
-\item Major Projects(Accessible to non-clients): {\href{https://www.fleetx.io/}{\uline{ Fleetx  \ExternalLink}}}
-{\href{https://www.fleetx.io/blog/}{\uline{ Fleetx Blogs. \ExternalLink}}}\end{itemize}}
-%------------------------------------------------
-
-\\
-\entrytwo
-  {Altan Pvt. Ltd.}
-  {\scalebox{0.9}[1.0]{Dec’2019-Oct’2020}}
-  {Software Engineer
-\begin{itemize}
-\item Worked in Frontend and Backend Front-End and Back-End domain on the technologies like VueJS, Golang MongoDB.
-\item Responsibilities included creating new features and enhancing existing  features as well as maintaining.
-\item \textbf{Fix security vulnerability} like : Privilege Escalation, Cross Site Scripting (XSS), Brute Force Login attack across the product.
-\item Created \textbf{microservice} in Python for Monitoring usage metrics.
-\end{itemize}}
-%------------------------------------------------
-
-\\
-\entrytwo
-  {Eventers Pvt. Ltd.}
-  {\scalebox{0.9}[1.0]{Sept’2019-Dec’2019}}
-  {Freelencer Frontend Engineer
-\begin{itemize}
-\item Worked in Frontend domain on the technologies like ReactJs and VueJS.
-\item My responsibilities included creating event management platform \textbf{from scratch} in VueJs.
-\item Created \textbf{stand-alone} wedding invitation page in ReactJs.
-\end{itemize}}
-%------------------------------------------------
-
-\\
-\entrytwo
-  {TheVoz Pvt. Ltd.}
-  {\scalebox{0.9}[1.0]{Jun’2019-Jul’2019}}
-{Frontend Intern
-\begin{itemize}
-\item Worked in Frontend domain on ReactJs and Material-UI.
-\item My responsibilities included creating new and designing the \textbf{product from scratch}
-\end{itemize}}
-
-%------------------------------------------------
+        \item Major Projects(Accessible to non-clients): \href{https://www.fleetx.io/}{Fleetx \ExternalLink}{\href{https://www.fleetx.io/blog/}{\uline{ Fleetx Blogs \ExternalLink}}}
+    \end{itemize}
+  }}
+  {
+ 	\textbf{}\\
+ 	 \vspace{-0.5cm}
+  }
+%------------------------------------------ ------
+%------------------------------------------ ------
+\textbf{Atlan Pvt. Ltd.}{\hfill \footnotesize{Dec’2019-Oct’2020}}\\
+\footnotesize{Software Engineer}
+\vspace{0.1cm}\\
+ \hspace{-0.2cm}
+\entry
+  {\scalebox{.8}[1.0]{}}
+  {}
+  {\footnotesize{
+    \vspace{-0.5cm}
+    \begin{itemize}
+        \item Worked in Frontend and Backend technologies like VueJS, Golang and MongoDB.
+        \item Responsibilities included creating new features and enhancing existing  features as well as \\ maintaining.
+\item \textbf{Fixed security vulnerability} such as Privilege Escalation, Cross Site Scripting (XSS), Brute Force Login attack in term of making product more safe.
+        \item Created \textbf{microservice} in Python for Monitoring usage metrics.
+    \end{itemize}
+  }}
+  {
+ 	\textbf{}\\
+ 	 \vspace{-0.5cm}
+  }
+%------------------------------------------ ------
+%------------------------------------------ ------
+\textbf{Eventers Pvt. Ltd.}{\hfill \footnotesize{May'19--July'19}}\\
+\footnotesize{Freelancer Frontend Engineer}
+\vspace{0.1cm}\\
+ \hspace{-0.2cm}
+\entry
+  {\scalebox{.8}[1.0]{}}
+  {}
+  {\footnotesize{
+    \vspace{-0.5cm}
+    \begin{itemize}
+        \item Worked in Frontend domain on the technologies like ReactJs and VueJS.
+        \item My responsibilities included creating event management platform \textbf{from scratch} in VueJs.
+        \item Created \textbf{stand-alone} wedding invitation page in ReactJs.
+    \end{itemize}
+  }}
+  {
+ 	\textbf{}\\
+ 	 \vspace{-0.5cm}
+  }
+%------------------------------------------ ------
+%------------------------------------------ ------
+\textbf{TheVoz Pvt. Ltd.}{\hfill \footnotesize{Jun’2019-Jul’2019}}\\
+\footnotesize{Frontend Intern}
+\vspace{0.1cm}\\
+ \hspace{-0.2cm}
+\entry
+  {\scalebox{.8}[1.0]{}}
+  {}
+  {\footnotesize{
+    \vspace{-0.5cm}
+    \begin{itemize}
+        \item Worked in Frontend domain on ReactJs and Material-UI.
+        \item My responsibilities included creating new and designing the product from scratch.
+    \end{itemize}
+  }}
+  {
+ 	\textbf{}\\
+ 	 \vspace{-0.5cm}
+  }
+%------------------------------------------ ------
 \end{entrylist}
-%----------------------------------------------------------------------------------------
-% OPEN SOURCE SECTION
-%----------------------------------------------------------------------------------------
-%   \vspace{4.5cm}
+
+% \clearpage %
+% \newgeometry{top=2.4cm, left=6.4cm, right=1.6cm}
+
 \section{Open Source}
-  \vspace{-0.2cm}
-\begin{entrylist}
-%------------------------------------------------
-\entrytwo
-{Zulip}
-{\scalebox{0.9}[1.0]{Sept’2019-Dec’2019}}
-{\vspace{-0.2cm}
-\begin{itemize}
-\item Zulip combines the immediacy of real-time chat with an email threading model. With Zulip, you can catch up on important conversations while ignoring irrelevant ones.
-\item Technologies: ElectronJs, TypeScript, ReactJs
-\item Link:  {\href{https://zulip.com/}{\uline{ zulip \ExternalLink}}}, {\href{https://github.com/zulip/zulip-desktop}{\uline{ Repository \ExternalLink}}}
-\end{itemize}}
-
-\end{entrylist}
-%------------------------------------------------
-
-
+\vspace{-0.2cm}
 \begin{entrylist}
 
-%------------------------------------------------
-\\ 
-\entrytwo
-  {Notifire}
-  {\scalebox{0.9}[1.0]{Jun’2019-Jul’2019}}
-{\vspace{-0.4cm}
-\begin{itemize}
-\item Notifire is ultimate library for managing multi-channel notifications with a single API.
+%------------------------------------------ ------
+\textbf{Zulip}{\hfill}\\
+\footnotesize{}
+\vspace{-0.3cm}\\
+ \hspace{0.1cm}
+\entry
+  {\scalebox{.8}[1.0]{}}
+  {}
+  {\footnotesize{
+    \vspace{-0.5cm}
+    \hspace{-0.5cm}
+    \begin{itemize}[leftmargin=*]
+        \item Zulip combines the immediacy of real-time chat with an email threading model. With Zulip, you can catch up on important conversations while ignoring irrelevant ones
+        \item Technologies: ElectronJs, TypeScript, ReactJs
+        \item Link: \href{https://zulip.com/}{Zulip \ExternalLink}, \href{https://github.com/zulip/zulip-desktop}{ Desktop Repository \ExternalLink},
+        \href{https://github.com/zulip/zulip}{Webapp Repository \ExternalLink}
+    \end{itemize}
+  }}
+  {
+ 	\textbf{}\\
+ 	 \vspace{-0.7cm}
+  }
+%------------------------------------------ ------
+
+\textbf{Notifire}{\hfill}\\
+\footnotesize{}
+\vspace{-0.4cm}\\
+ \hspace{0.1cm}
+\entry
+  {\scalebox{.8}[1.0]{}}
+  {}
+  {\footnotesize{
+    \vspace{-0.4cm}
+    \begin{itemize}[leftmargin=*]
+        \item Notifire is ultimate library for managing multi-channel notifications with a single API.
 \item Technologies: JavaScript, TypeScript.
-\item Link: {\href{https://www.notifire.co/}{\uline{ Notifire \ExternalLink}}}, {\href{https://github.com/notifirehq/notifire}{\uline{ Repository \ExternalLink}}}
-\end{itemize}}
-
-%------------------------------------------------
-
-
-\\
-\entrytwo
-  {Figma Linux}
-  {\scalebox{0.9}[1.0]{Jun’2019-Jul’2019}}
-{\vspace{-0.4cm}
-\begin{itemize}
-\item Figma is the first interface design tool based in the browser, making it easier for teams to create software.
-\item Technologies: TypeScript, Shell, Perl.
-\item Link:  {\href{https://github.com/Figma-Linux}{\uline{ Figma Linux \ExternalLink}}}, {\href{https://github.com/Figma-Linux/figma-linux}{\uline{ Repository \ExternalLink}}}
-\end{itemize}}
-
-%------------------------------------------------
-\end{entrylist}
-%------------------------------------------------------------
-
-%----------------------------
-% SIDE PROJECTS SECTION 
-%----------------------------------------------------------------------------------------
-\section{Side Projects}
-  \vspace{-0.2cm}
-\begin{entrylist}
-
-%------------------------------------------------
-
-\entrytwo
-  {Image Compressor [Frontend]}
-  {\scalebox{1}[1.0]{VueJS, Firebase}}
-  {\vspace{-0.4cm}
-  \begin{itemize}
-  \item It is a fully online-hosted website to compress your files. The algorithm compresses up to \textbf{75\%} of the image. You can view the compressed images as they are stored in Firebase bucket.
-  \item {\href{https://nifty-rosalind-e664be.netlify.app/}{\uline{ Website Preview \ExternalLink}}}, {\href{https://github.com/rrhythmsharma/Image-compressor}{\uline{ Repository \ExternalLink}}}
-  \end{itemize}
-  }
-
-\\
-\entrytwo
-  {MockAPI Generator [Backend]}
-  {\scalebox{1}[1.0]{ExpressJs, NodeJs, MongoDB, Postman}}
-  {\vspace{-0.4cm}
-  \begin{itemize}
-  \item MockAPI is a simple tool that lets you easily mock up APIs, generate custom data, and preform operations on it using \textbf{RESTful interface}.
-  \item {\href{https://documenter.getpostman.com/view/9380456/TzzHnYz9}{\uline{ Postman Preview \ExternalLink}}}, {\href{https://github.com/rrhythmsharma/MockAPI-Generator-Backend}{\uline{ Repository \ExternalLink}}}
-  \end{itemize}
+        \item Technologies: React, TypeScript, Node
+        \item Link: \href{https://www.notifire.co/}{Notifire \ExternalLink},  \href{https://github.com/notifirehq/notifire}{Repository \ExternalLink}
+    \end{itemize}
+  }}
+  {
+ 	\textbf{}\\
+ 	 \vspace{-1.0cm}
   }
   
-\\
-\entrytwo
-  {Landing Page [Design]}
-  {\scalebox{1}[1.0]{Dribbble, Figma}}
-  {\vspace{-0.4cm}
-  \begin{itemize}
-  \item A responsive landing page only using pure HTML5, CSS3 and JS. The project does not use any framework or library. The performance, accessibility, Best practices, and SEO is more than \textbf{95\%}
-  \item {\href{https://agitated-mclean-93a55d.netlify.app/}{\uline{ Website Preview \ExternalLink}}}, {\href{https://github.com/rrhythmsharma/Landing-Page}{\uline{ Repository \ExternalLink}}}, {\href{https://dribbble.com/shots/14995754-landing-page}{\uline{ Dribbble \ExternalLink}}}
-  \end{itemize}
-  }
-
-%------------------------------------------------
 \end{entrylist}
-%------------------------------------------------------------
 
-
-%----------------------------------------------------------------------------------------
-% EDUCATION SECTION
-%----------------------------------------------------------------------------------------
-\section{Education}
-  \vspace{-0.1cm}
 \begin{entrylist}
 
-\vspace{0.2cm}
-\entrythree
-  {B.Tech, CSE}
-  {\scalebox{1}[1.0]{Rajasthan Technical University}}
-  {Percentage : 72\%}
-  {2016-2020}
+\vspace{0.99cm}\\
+\textbf{Figma Linux}{\hfill}\\
+\footnotesize{}
+\vspace{-0.4cm}\\
+ \hspace{0.1cm}
+\entry
+  {\scalebox{.8}[1.0]{}}
+  {}
+  {\footnotesize{
+    \vspace{-0.4cm}
+    \begin{itemize}[leftmargin=*]
+        \item Figma is the first interface design tool based in the browser, making it easier for teams to create software.
+        \item Technologies: TypeScript, Shell, Perl.
+        \item Link: \href{https://github.com/Figma-Linux}{Figma Linux \ExternalLink},  \href{https://github.com/Figma-Linux/figma-linux}{Repository \ExternalLink}
+    \end{itemize}
+  }}
+  {
+ 	\textbf{}\\
+ 	 \vspace{-1.0cm}
+  }
 
-\vspace{0.3cm}
-\entrythree
-  {Class 12}
-  {\scalebox{1}[1.0]{New Look Sr. Sec. School(CBSE)}}
-  {Percentage : 70\%}
-  {2016}
   
-\vspace{0.3cm}
-\entrythree
-  {Class 10}
-  {\scalebox{1}[1.0]{New Look Sr. Sec. School(CBSE)}}
-  {CGPA : 7.8}
-  {2014}
-
-%------------------------------------------------
 \end{entrylist}
-%------------------------------------------------------------
 
 
-
-%----------------------------------------------------------------------------------------
-% SIDE PROJECTS SECTION - II
-%----------------------------------------------------------------------------------------
 \begin{aside}
 %
-\vspace{-0.9cm}
 \section{Hobbies}
+\vspace{0.3cm}
 Painting
 Drawing
 Sketch Artist
 Play Harmonica
 %
 \section{Strengths}
+\vspace{0.3cm}
 Innovative,
 Creative
 Quick Learner
@@ -343,4 +342,89 @@ Leadership Skills
 optimistic
 %
 \end{aside}
+
+
+
+\section{Side Projects}
+\vspace{-0.3cm}
+\begin{entrylist}
+
+\entrytwo
+  {\scalebox{.8}[1.0]{Sept'20-Oct'20}}
+    {\href{https://nifty-rosalind-e664be.netlify.app}{\color{headercolor}{Image Compressor (Frontend)}} \ExternalLink \vspace{0.1cm}}
+  {\hfill \footnotesize{VueJS, Firebase}}
+  {\small{
+    Increase the speed of your website while reducing bandwidth usage. Image Compressor reduces the size of your images by  \textbf{50 to 80} percent while maintaining complete transparency. As a safety net The photos are saved in a Firebase bucket.
+    \vspace{-0.2cm}
+  }}
+  {\small{
+  {\href{https://nifty-rosalind-e664be.netlify.app/}{\uline{Website Preview \ExternalLink}}}, {\href{https://github.com/rrhythmsharma/Image-compressor}{\uline{Repository \ExternalLink}}}
+  }
+  }
+  \\
+
+%-------------------------------------------------
+
+\entrytwo
+  {\scalebox{.8}[1.0]{Sept'20-Oct'20}}
+      {\href{https://documenter.getpostman.com/view/9380456/TzzHnYz9}{\color{headercolor}{MockAPI Generator (Backend)}} \ExternalLink \vspace{0.1cm}}
+  {\hfill \footnotesize{ExpressJs, NodeJs, MongoDB, Postman}}
+  {\small{
+      MockAPI is a simple tool that lets you easily mock up APIs, generate custom data, and preform operations on it using \textbf{RESTful interface}.
+      \vspace{-0.2cm}
+  }}
+  {\small{
+  {\href{https://documenter.getpostman.com/view/9380456/TzzHnYz9}{\uline{Postman Preview \ExternalLink}}}, {\href{https://github.com/rrhythmsharma/MockAPI-Generator-Backend}{\uline{ Repository \ExternalLink}}}
+  }}
+\\
+
+\entrytwo
+  {\scalebox{.8}[1.0]{Apr'20-May'20}}
+  {\href{https://agitated-mclean-93a55d.netlify.app/}{\color{headercolor}{Landing Page (Design)}} \ExternalLink \vspace{0.1cm}}
+  {\hfill \footnotesize{Dribbble, Figma}}
+  {\small{
+  Landing Page is a HTML template. It's completely responsive and works on any device. In terms of Performance, Accessibility, Best Practices, and SEO, the page has a Lighthouse score of over \textbf{95\%}. \vspace{-0.2cm}
+  }}
+  {
+  \small{
+    {\href{https://agitated-mclean-93a55d.netlify.app/}{Website Preview \ExternalLink}}, {\href{https://github.com/rrhythmsharma/Landing-Page}{Repository \ExternalLink}}, {\href{https://dribbble.com/shots/14995754-landing-page}{Dribbble \ExternalLink}}
+    {\href{https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https\%3A\%2F\%2Fagitated-mclean-93a55d.netlify.app\%2F}{Lighthouse score \ExternalLink}}
+}}
+
+\vspace{-0.8cm}
+\end{entrylist}
+\\
+
+  
+%------------------------------------------------
+%----------------------------------------------------------------------------------------
+% EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+\section{Education}
+  \vspace{-0.1cm}
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{\scalebox{.8}[1.0]{2015--2019}}
+{B.Tech, CSE \vspace{0.2cm}}
+{\hfill \footnotesize{Rajasthan Technical University}}
+{\small{Percentage : 72\%} \hfill \footnotesize{2016 -- 2020} \vspace{0.2cm}}
+
+% {\textbf}
+%------------------------------------------------
+\entry
+{\scalebox{.8}[1.0]{2014}}
+{Class 12 \vspace{0.2cm}}
+{\hfill \footnotesize{New Look Sr. Sec. School(CBSE)}}
+{\small{Percentage : 70\%} \hfill \footnotesize{2016} \vspace{0.2cm}}
+%------------------------------------------------
+\entry
+{\scalebox{.8}[1.0]{2012}}
+{Class 10 \vspace{0.2cm}}
+{\hfill \footnotesize{New Look Sr. Sec. School(CBSE)}}
+{\small{CGPA : 7.8} \hfill \footnotesize{2014} \vspace{0.1cm}}
+%------------------------------------------------
+\end{entrylist}
+%--------------------------------------------------------------------------
+
 \end{document}
